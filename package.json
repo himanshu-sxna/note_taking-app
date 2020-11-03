@@ -1,0 +1,23 @@
+{
+  "name": "note-taking-app",
+  "version": "1.0.0",
+  "description": "An app that can save, edit and delete notes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/himanshu-sxna/note_taking-app.git"
+  },
+  "author": "Himanshu Saxena",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/himanshu-sxna/note_taking-app/issues"
+  },
+  "homepage": "https://github.com/himanshu-sxna/note_taking-app#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security"
+  }
+}
