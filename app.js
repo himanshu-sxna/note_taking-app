@@ -60,6 +60,10 @@ server.delete("/api/notes/:id", (req, res)=> {
     res.json(newNotesArray);
 })
 
+server.get("/", (req, res)=>{
+    res.sendFile(path.join(__dirname, "index.html"));
+})
+
 //all undefinded routes will load index.html
 server.get("/*", (req, res)=>{
     res.sendFile(path.join(__dirname, "index.html"));
