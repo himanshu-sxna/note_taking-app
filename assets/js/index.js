@@ -7,6 +7,9 @@ const $noteList = $(".list-container .list-group");
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
+//declaration for note ID
+let noteID ;
+
 // A function for getting all notes from the db
 const getNotes = () => {
   return $.ajax({
@@ -54,11 +57,17 @@ const handleNoteSave = function () {
   const newNote = {
     title: $noteTitle.val(),
     text: $noteText.val(),
+    id: `${noteID}${Math.floor(Math.random() * 999) + 100}`
+    // id attribute added to notes that will be unique to each note
+    // it will genrate a random 4 digit number, with the 
+    //first digit being the index for the note in the array
+    //and last 3 digits a random number between 100 & 999
   };
 
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
+    noteID += 1;
   });
 };
 
@@ -130,9 +139,13 @@ const renderNoteList = (notes) => {
   notes.forEach((note) => {
     const $li = create$li(note.title).data(note);
     noteListItems.push($li);
+
   });
 
   $noteList.append(noteListItems);
+  // set noteID to be the length of the notes array
+  // this is to ensure iot does not reset on page refresh
+  noteID = notes.length;
 };
 
 // Gets notes from the db and renders them to the sidebar
