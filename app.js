@@ -16,6 +16,9 @@ server.use("/assets",express.static(path.join(__dirname, "assets")));
 
 
 //routes for html pages and apis
+server.get("/", (req, res)=>{
+    res.sendFile(path.join(__dirname, "index.html"));
+})
 
 server.get("/notes", (req,res)=> {
     res.sendFile(path.join(__dirname, "notes.html"));
@@ -58,10 +61,6 @@ server.delete("/api/notes/:id", (req, res)=> {
     fs.writeFileSync("db.json", JSON.stringify(newNotesArray));
     //send updated notes to server
     res.json(newNotesArray);
-})
-
-server.get("/", (req, res)=>{
-    res.sendFile(path.join(__dirname, "index.html"));
 })
 
 //all undefinded routes will load index.html
