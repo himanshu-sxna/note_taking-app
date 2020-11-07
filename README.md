@@ -26,9 +26,9 @@ The application is deployed via Heroku @ [App link](https://guarded-scrubland-90
 
 #### Application allows users to  
 
-- Create and save notes.
-- View previously saved notes.
-- Delete saved notes.
+- Create and save notes
+- View previously saved note
+- Delete saved notes
 
 ## <a name="license"></a>License
 
