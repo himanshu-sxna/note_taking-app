@@ -35,6 +35,7 @@ The application is deployed via Heroku @ [App link](https://guarded-scrubland-90
 MIT License
 
 ---
+
 ## <a name="developer-info"></a>Developer Info
 
 Feel free to contact me with any questions:
